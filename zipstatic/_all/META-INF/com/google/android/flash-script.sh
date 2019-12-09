@@ -56,7 +56,8 @@ install_nobackup() {
 
 install_and_link() {
   TARGET=$1
-  # //
+  # //change process
+  # XPOSED="${1}_xposed"
   XPOSED="${1}_mask"
   BACKUP="${1}_original"
   if [ ! -f ./$XPOSED ]; then
@@ -171,6 +172,7 @@ echo "- Placing files"
 install_nobackup /system/mask.prop                      0    0 0644
 install_nobackup /system/framework/MaskBridge.jar       0    0 0644
 
+# move 
 install_and_link  /system/bin/app_process32               0 2000 0755 u:object_r:zygote_exec:s0
 install_overwrite /system/bin/dex2oat                     0 2000 0755 u:object_r:dex2oat_exec:s0
 install_overwrite /system/bin/oatdump                     0 2000 0755

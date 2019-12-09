@@ -252,13 +252,15 @@ sub get_compiled_files($$) {
     tie(%files, 'Tie::IxHash');
 
     if ($sdk < 21) {
-        $files{'/system/bin/app_process_xposed'} = '/system/bin/app_process_xposed';
+        ## changed
+        $files{'/system/bin/app_process_mask'} = '/system/bin/app_process_mask';
         $files{$_} = $_ foreach qw(
             /system/lib/libxposed_dalvik.so
         );
     } else {
+        ## changed
         $files{$_} = $_ foreach qw(
-            /system/bin/app_process32_xposed
+            /system/bin/app_process32_mask
             /system/lib/libmask_art.so
 
             /system/lib/libart.so
@@ -276,7 +278,7 @@ sub get_compiled_files($$) {
             delete $files{'/system/lib/libart-disassembler.so'};
 
             $files{$_} = $_ foreach qw(
-                /system/bin/app_process64_xposed
+                /system/bin/app_process64_mask
                 /system/lib64/libmask_art.so
 
                 /system/lib64/libart.so
