@@ -56,7 +56,8 @@ install_nobackup() {
 
 install_and_link() {
   TARGET=$1
-  XPOSED="${1}_xposed"
+  # //
+  XPOSED="${1}_mask"
   BACKUP="${1}_original"
   if [ ! -f ./$XPOSED ]; then
     return
