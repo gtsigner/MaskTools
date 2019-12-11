@@ -1,3 +1,6 @@
+自定义xposed 关注博客：https://blog.csdn.net/qq_22656473
+
+
 # Xposed Tools
 
 These tools can be used to compile and package the Xposed framework. They are especially useful when it comes to releasing files for various platforms and Android versions. Note that Xposed by itself is quite complicated and not suitable for beginners. You'll need a certain level of experience with C++ and general software development in order to build and modify Xposed by yourself.
